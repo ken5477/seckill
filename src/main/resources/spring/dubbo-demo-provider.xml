@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,3 +10,16 @@
     <bean id="demoService" class="org.seckill.dubbo_Demo.Provider.DemoServiceImpl"/>
 </beans>
 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="demo-provider"/>
+    <dubbo:registry address="zookeeper://192.168.0.251:2181" check="false" subscribe="false" register=""></dubbo:registry>
+    <dubbo:service interface="org.seckill.dubbo_Demo.DemoService" ref="demoService"/>
+    <bean id="demoService" class="org.seckill.dubbo_Demo.Provider.DemoServiceImpl"/>
+</beans>
+
+>>>>>>> c57c95438f6eb79da1f2e634a5ada97649e8404a
